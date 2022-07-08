@@ -1,18 +1,17 @@
-import { Component } from 'react';
-
+import React, { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export class App extends Component {
   state = {
-    search: ''
+    searchImg: ''
   }
 
-  handleFormSubmit = search => {
-    this.setState({ search });
+  handleFormSubmit = searchImg => {
+    this.setState({ searchImg });
   }
 
 
@@ -20,7 +19,7 @@ export class App extends Component {
     return (
       <div>
         <Searchbar onSubmit={this.handleFormSubmit} />
-        <ImageGallery />
+        <ImageGallery searchImg={this.state.searchImg} />
         <ToastContainer autoClose={3000} />
       </div>
     );
