@@ -97,6 +97,7 @@ class ImageGallery extends Component {
 }
 
 ImageGallery.propTypes = {
-  searchImg: PropTypes.string,
+  searchImg: PropTypes.string.isRequired,
 };
+
 export default ImageGallery;
